@@ -1,16 +1,16 @@
 #include "cygnus.dtsi"
 
-&default_transform { // The matrix transform for this board is 6 columns over because the left half is 6 columns wide according to the matrix.
+&default_transform {
     col-offset = <6>;
 };
 
 &kscan0 {
-    row-gpios
-        = <&pro_micro 14 GPIO_ACTIVE_HIGH> // col6 in the schematic
-        , <&pro_micro 15 GPIO_ACTIVE_HIGH> // col5 in the schematic
-        , <&pro_micro 18 GPIO_ACTIVE_HIGH> // col4 in the schematic
-        , <&pro_micro 19 GPIO_ACTIVE_HIGH> // col3 in the schematic
-        , <&pro_micro 20 GPIO_ACTIVE_HIGH>  // col2 in the schematic
-        , <&pro_micro 21 GPIO_ACTIVE_HIGH>  // col1 in the schematic
+    row-gpios  // These were your COLS, now they're ROWS after swap
+        = <&gpio1 13 GPIO_ACTIVE_HIGH>  // P1.13 (reversed order)
+        , <&gpio0 4  GPIO_ACTIVE_HIGH>  // P0.04
+        , <&gpio1 15 GPIO_ACTIVE_HIGH>  // P1.15
+        , <&gpio0 2  GPIO_ACTIVE_HIGH>  // P0.02
+        , <&gpio0 29 GPIO_ACTIVE_HIGH>  // P0.29
+        , <&gpio0 11 GPIO_ACTIVE_HIGH>  // P0.11
         ;
 };
