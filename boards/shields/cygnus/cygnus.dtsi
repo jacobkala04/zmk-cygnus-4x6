@@ -46,14 +46,14 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5)     RC(3,6) RC(3,7) RC(3,8) RC(3
 
 kscan0: kscan {
     compatible = "zmk,kscan-gpio-matrix";
-    diode-direction = "col2row";  // Changed based on your diode orientation
+    diode-direction = "row2col";  // Changed back - test this first
     wakeup-source;
-    col-gpios  // These were your ROWS, now they're COLS after swap
-        = <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P0.17
-        , <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P0.22
-        , <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P0.20
-        , <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P0.24
-        , <&gpio1 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // P1.00
+    row-gpios
+        = <&pro_micro 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // Row 7
+        , <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // Row 8
+        , <&pro_micro 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // Row 9
+        , <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row 10
+        , <&pro_micro 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row 11
         ;
-    };
+};
 };
