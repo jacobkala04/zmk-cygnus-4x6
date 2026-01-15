@@ -1,4 +1,4 @@
-#include <behaviors.dtsi>
+//#include <behaviors.dtsi> //COMMENTED OUT CAUSE IT FUCKED ME
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
