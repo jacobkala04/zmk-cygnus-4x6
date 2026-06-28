@@ -22,3 +22,6 @@ include:
     shield: cygnus_left
   - board: nice_nano/nrf52840/zmk
     shield: cygnus_right
+  - board: nice_nano/nrf52840/zmk
+    shield: settings_reset
+    artifact-name: settings_reset
