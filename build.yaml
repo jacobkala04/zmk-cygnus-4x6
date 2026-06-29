@@ -22,6 +22,8 @@ include:
     shield: cygnus_left
   - board: nice_nano/nrf52840/zmk
     shield: cygnus_right
+    cmake-args: -DCONFIG_ZMK_USB_LOGGING=y
+    artifact-name: cygnus_right_logging
   - board: nice_nano/nrf52840/zmk
     shield: settings_reset
     artifact-name: settings_reset
